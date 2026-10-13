@@ -1,0 +1,120 @@
+<h2>Checkout &amp; Delivery</h2>
+
+<!-- shown after the order is placed -->
+<div class="success-box" *ngIf="orderPlaced">
+  <h3>Thank you {{ orderName }}! Your order is placed.</h3>
+  <p>Order id: {{ orderId }}</p>
+  <p>Date: {{ orderDate | date:'medium' }}</p>
+  <p>Amount to pay: {{ orderTotal | currency:'INR':'symbol':'1.0-0' }}</p>
+  <p *ngIf="selectedCity">Your pet will reach {{ selectedCity.name }} in {{ selectedCity.days }} day(s).</p>
+</div>
+
+<div *ngIf="!orderPlaced">
+
+  <h3>Your Cart</h3>
+  <p *ngIf="cartService.items.length == 0">Your cart is empty.</p>
+  <ul>
+    <li *ngFor="let item of cartService.items; let i = index">
+      {{ item.emoji }} {{ item.name }} - {{ item.price | currency:'INR':'symbol':'1.0-0' }}
+      <button class="small" (click)="cartService.removeItem(i)">Remove</button>
+    </li>
+  </ul>
+
+  <p>Items: {{ cartService.getTotal() | currency:'INR':'symbol':'1.0-0' }}</p>
+  <p>Delivery charge: {{ deliveryCharge | currency:'INR':'symbol':'1.0-0' }}</p>
+  <p><b>Total: {{ getGrandTotal() | currency:'INR':'symbol':'1.0-0' }}</b></p>
+
+  <h3>Delivery Details</h3>
+
+  <p class="error" *ngIf="errorMessage != ''">{{ errorMessage }}</p>
+
+  <!-- reactive form -->
+  <form [formGroup]="checkoutForm" (ngSubmit)="placeOrder()">
+    <table>
+      <tr>
+        <td>Full Name:</td>
+        <td>
+          <input type="text" formControlName="name">
+          <span class="error" *ngIf="isInvalid('name')">
+            <span *ngIf="hasError('name', 'required')">Name is required</span>
+            <span *ngIf="hasError('name', 'minlength')">Minimum 3 letters</span>
+            <span *ngIf="hasError('name', 'pattern')">Only letters are allowed</span>
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td>Email:</td>
+        <td>
+          <input type="email" formControlName="email">
+          <span class="error" *ngIf="isInvalid('email')">
+            <span *ngIf="hasError('email', 'required')">Email is required</span>
+            <span *ngIf="hasError('email', 'email')">Enter a valid email</span>
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td>Phone:</td>
+        <td>
+          <input type="text" formControlName="phone">
+          <span class="error" *ngIf="isInvalid('phone')">Enter a 10 digit phone number</span>
+        </td>
+      </tr>
+      <tr>
+        <td>Address:</td>
+        <td>
+          <textarea rows="3" formControlName="address"></textarea>
+          <span class="error" *ngIf="isInvalid('address')">Address is required (min 10 characters)</span>
+        </td>
+      </tr>
+      <tr>
+        <td>City:</td>
+        <td>
+          <select formControlName="city" (change)="onCityChange()">
+            <option value="">-- Select city --</option>
+            <option *ngFor="let c of cities" [value]="c.name">{{ c.name }}</option>
+          </select>
+          <span class="error" *ngIf="isInvalid('city')">Please select a city</span>
+          <p class="info" *ngIf="selectedCity">
+            Delivery to {{ selectedCity.name | uppercase }} takes {{ selectedCity.days }} day(s).
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td>Pincode:</td>
+        <td>
+          <input type="text" formControlName="pincode">
+          <span class="error" *ngIf="isInvalid('pincode')">Pincode must be 6 digits</span>
+        </td>
+      </tr>
+      <tr>
+        <td>Payment:</td>
+        <td>
+          <input type="radio" formControlName="payment" value="Cash on Delivery"> Cash on Delivery
+          <input type="radio" formControlName="payment" value="UPI"> UPI
+          <input type="radio" formControlName="payment" value="Card"> Card
+          <span class="error" *ngIf="isInvalid('payment')">Select a payment method</span>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <input type="checkbox" formControlName="terms"> I agree to the delivery terms
+          <span class="error" *ngIf="isInvalid('terms')">You must agree to the terms</span>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><button type="submit">Place Order</button></td>
+      </tr>
+    </table>
+  </form>
+
+  <p class="message" *ngIf="message != ''">{{ message }}</p>
+
+  <h3>Delivery Information</h3>
+  <ul>
+    <li>Pets are delivered in a safe travel box with food</li>
+    <li>Someone above 18 years must receive the pet</li>
+    <li>Delivery time depends on your city</li>
+  </ul>
+</div>

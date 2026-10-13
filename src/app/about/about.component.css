@@ -1,0 +1,15 @@
+.aboutbox {
+  background-color: white;
+  border-left: 6px solid #28b463;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+td {
+  padding: 6px;
+  vertical-align: top;
+}

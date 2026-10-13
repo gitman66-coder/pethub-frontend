@@ -1,0 +1,21 @@
+[
+  { "id": 1,  "name": "Labrador Puppy",        "category": "dog",     "age": "2 months", "price": 15000, "emoji": "🐶", "stock": 3, "featured": true },
+  { "id": 2,  "name": "Golden Retriever Puppy", "category": "dog",     "age": "3 months", "price": 25000, "emoji": "🐕", "stock": 2, "featured": false },
+  { "id": 3,  "name": "Pomeranian",             "category": "dog",     "age": "2 months", "price": 18000, "emoji": "🐩", "stock": 4, "featured": false },
+  { "id": 4,  "name": "German Shepherd Puppy",  "category": "dog",     "age": "3 months", "price": 20000, "emoji": "🦮", "stock": 0, "featured": false },
+
+  { "id": 5,  "name": "Persian Kitten",         "category": "cat",     "age": "2 months", "price": 12000, "emoji": "🐱", "stock": 2, "featured": true },
+  { "id": 6,  "name": "Siamese Kitten",         "category": "cat",     "age": "3 months", "price": 10000, "emoji": "🐈", "stock": 5, "featured": false },
+  { "id": 7,  "name": "Maine Coon Kitten",      "category": "cat",     "age": "3 months", "price": 30000, "emoji": "😺", "stock": 1, "featured": false },
+  { "id": 8,  "name": "Bombay Cat",             "category": "cat",     "age": "4 months", "price": 14000, "emoji": "🐈‍⬛", "stock": 3, "featured": false },
+
+  { "id": 9,  "name": "Holland Lop Rabbit",     "category": "rabbit",  "age": "2 months", "price": 3500,  "emoji": "🐰", "stock": 6, "featured": true },
+  { "id": 10, "name": "Lionhead Rabbit",        "category": "rabbit",  "age": "3 months", "price": 4000,  "emoji": "🐇", "stock": 4, "featured": false },
+  { "id": 11, "name": "Dutch Rabbit",           "category": "rabbit",  "age": "2 months", "price": 3000,  "emoji": "🐰", "stock": 2, "featured": false },
+  { "id": 12, "name": "Angora Rabbit",          "category": "rabbit",  "age": "4 months", "price": 5000,  "emoji": "🐇", "stock": 3, "featured": false },
+
+  { "id": 13, "name": "Leopard Gecko",          "category": "reptile", "age": "6 months", "price": 6000,  "emoji": "🦎", "stock": 3, "featured": true },
+  { "id": 14, "name": "Red Eared Turtle",       "category": "reptile", "age": "1 year",   "price": 2500,  "emoji": "🐢", "stock": 8, "featured": false },
+  { "id": 15, "name": "Corn Snake",             "category": "reptile", "age": "1 year",   "price": 8000,  "emoji": "🐍", "stock": 1, "featured": false },
+  { "id": 16, "name": "Bearded Dragon",         "category": "reptile", "age": "8 months", "price": 9000,  "emoji": "🦎", "stock": 2, "featured": false }
+]

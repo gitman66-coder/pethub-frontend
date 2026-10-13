@@ -1,0 +1,23 @@
+<h2>Welcome to PetHub</h2>
+<p>We sell dogs, cats, rabbits and reptiles. Pick a category to see the pets that are available.</p>
+
+<div class="categories">
+  <a routerLink="/dogs" class="category">🐶 Dogs</a>
+  <a routerLink="/cats" class="category">🐱 Cats</a>
+  <a routerLink="/rabbits" class="category">🐰 Rabbits</a>
+  <a routerLink="/reptiles" class="category">🦎 Reptiles</a>
+</div>
+
+<h2>Top Picks</h2>
+
+<p class="message" *ngIf="message != ''">{{ message }}</p>
+
+<div class="cards">
+  <div class="card" *ngFor="let pet of featuredPets">
+    <div class="pic">{{ pet.emoji }}</div>
+    <h3>{{ pet.name | uppercase }}</h3>
+    <p>Age: {{ pet.age }}</p>
+    <p>Price: {{ pet.price | currency:'INR':'symbol':'1.0-0' }}</p>
+    <button (click)="addToCart(pet)">Add to Cart</button>
+  </div>
+</div>

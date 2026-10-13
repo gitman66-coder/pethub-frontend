@@ -1,0 +1,94 @@
+/* PetHub - global styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #fff8e7;
+  color: #333;
+}
+
+.content {
+  width: 85%;
+  margin: 20px auto;
+  min-height: 400px;
+}
+
+h2 {
+  color: #1b4f72;
+}
+
+/* pet cards (used on home and pet pages) */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  background-color: white;
+  border: 2px solid #2e86c1;
+  border-radius: 8px;
+  width: 220px;
+  padding: 10px;
+  text-align: center;
+}
+
+.pic {
+  font-size: 70px;
+  background-color: #d6eaf8;
+  border-radius: 6px;
+}
+
+.card h3 {
+  margin: 8px 0;
+}
+
+.card p {
+  margin: 4px 0;
+}
+
+button {
+  background-color: #28b463;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 6px;
+}
+
+button:hover {
+  background-color: #1e8449;
+}
+
+button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+input[type="text"], input[type="email"], select, textarea {
+  padding: 5px;
+  width: 250px;
+}
+
+.error {
+  color: red;
+  font-size: 13px;
+}
+
+.message {
+  font-weight: bold;
+  color: #1b4f72;
+}
+
+.success {
+  color: green;
+  font-weight: bold;
+}
+
+footer {
+  background-color: #1b4f72;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: 30px;
+}

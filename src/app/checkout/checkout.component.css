@@ -1,0 +1,23 @@
+td {
+  padding: 6px;
+  vertical-align: top;
+}
+
+.success-box {
+  background-color: #d5f5e3;
+  border: 2px solid #28b463;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.info {
+  margin: 4px 0 0 0;
+  font-size: 13px;
+  color: #1b4f72;
+}
+
+button.small {
+  padding: 3px 8px;
+  font-size: 12px;
+  background-color: #cb4335;
+}

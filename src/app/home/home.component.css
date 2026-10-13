@@ -1,0 +1,20 @@
+.categories {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.category {
+  background-color: #d6eaf8;
+  border: 2px solid #2e86c1;
+  border-radius: 8px;
+  padding: 15px 30px;
+  font-size: 20px;
+  text-decoration: none;
+  color: #1b4f72;
+  font-weight: bold;
+}
+
+.category:hover {
+  background-color: #aed6f1;
+}

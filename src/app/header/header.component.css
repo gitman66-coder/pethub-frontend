@@ -1,0 +1,33 @@
+header {
+  background-color: #2e86c1;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav {
+  background-color: #1b4f72;
+  text-align: center;
+  padding: 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: yellow;
+}
+
+/* the link of the page we are on */
+nav a.active {
+  color: yellow;
+  border-bottom: 2px solid yellow;
+}

@@ -1,0 +1,26 @@
+<h2>{{ category | uppercase }}S FOR SALE</h2>
+
+<p>
+  Search:
+  <input type="text" [(ngModel)]="searchText" placeholder="type a name...">
+</p>
+
+<p class="message" *ngIf="message != ''">{{ message }}</p>
+<p *ngIf="loading">Loading pets...</p>
+<p class="error" *ngIf="errorMessage != ''">{{ errorMessage }}</p>
+
+<div class="cards">
+  <div class="card" *ngFor="let pet of getFilteredPets()" [ngClass]="{ 'soldout': pet.stock == 0 }">
+    <div class="pic">{{ pet.emoji }}</div>
+    <h3>{{ pet.name }}</h3>
+    <p>Age: {{ pet.age }}</p>
+    <p>Price: {{ pet.price | currency:'INR':'symbol':'1.0-0' }}</p>
+
+    <p class="low" *ngIf="pet.stock > 0 && pet.stock <= 2">Only {{ pet.stock }} left!</p>
+    <p class="low" *ngIf="pet.stock == 0">Sold out</p>
+
+    <button [disabled]="pet.stock == 0" (click)="addToCart(pet)">Add to Cart</button>
+  </div>
+</div>
+
+<p *ngIf="!loading && getFilteredPets().length == 0">No pets found.</p>

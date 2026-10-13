@@ -1,0 +1,9 @@
+.soldout {
+  background-color: #e5e5e5;
+  opacity: 0.7;
+}
+
+.low {
+  color: red;
+  font-weight: bold;
+}

@@ -1,0 +1,7 @@
+[
+  { "name": "Hyderabad",    "days": 1, "charge": 200 },
+  { "name": "Secunderabad", "days": 1, "charge": 200 },
+  { "name": "Warangal",     "days": 2, "charge": 500 },
+  { "name": "Vijayawada",   "days": 3, "charge": 700 },
+  { "name": "Bengaluru",    "days": 4, "charge": 900 }
+]

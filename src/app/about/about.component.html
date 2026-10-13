@@ -1,0 +1,51 @@
+<h2>About Us</h2>
+
+<div class="aboutbox">
+  <p>
+    PetHub started as a small idea to help families find a healthy and happy pet.
+    All our pets are checked by a vet before they are sold. We want every pet to
+    go to a loving home.
+  </p>
+</div>
+
+<h2>Why Choose PetHub?</h2>
+<ul>
+  <li>All pets are checked by a vet</li>
+  <li>Safe delivery to your home</li>
+  <li>Help and tips on how to take care of your pet</li>
+</ul>
+
+<h2>Contact Us</h2>
+
+<p class="success" *ngIf="sent">Thank you {{ sentName }}! We got your message and will reply soon.</p>
+
+<!-- template driven form -->
+<form #contactForm="ngForm" (ngSubmit)="sendMessage(contactForm)">
+  <table>
+    <tr>
+      <td>Name:</td>
+      <td>
+        <input type="text" name="name" [(ngModel)]="contact.name" required minlength="3" #nameBox="ngModel">
+        <span class="error" *ngIf="nameBox.invalid && nameBox.touched">Name is required (min 3 letters)</span>
+      </td>
+    </tr>
+    <tr>
+      <td>Email:</td>
+      <td>
+        <input type="email" name="email" [(ngModel)]="contact.email" required email #emailBox="ngModel">
+        <span class="error" *ngIf="emailBox.invalid && emailBox.touched">Enter a valid email</span>
+      </td>
+    </tr>
+    <tr>
+      <td>Message:</td>
+      <td>
+        <textarea name="message" rows="4" [(ngModel)]="contact.message" required minlength="10" #msgBox="ngModel"></textarea>
+        <span class="error" *ngIf="msgBox.invalid && msgBox.touched">Message must be at least 10 characters</span>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><button type="submit" [disabled]="contactForm.invalid">Send Message</button></td>
+    </tr>
+  </table>
+</form>

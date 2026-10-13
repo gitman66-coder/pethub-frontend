@@ -1,0 +1,14 @@
+<header>
+  <h1>PetHub</h1>
+  <p>Find your new best friend</p>
+</header>
+
+<nav>
+  <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+  <a routerLink="/dogs" routerLinkActive="active">Dogs</a>
+  <a routerLink="/cats" routerLinkActive="active">Cats</a>
+  <a routerLink="/rabbits" routerLinkActive="active">Rabbits</a>
+  <a routerLink="/reptiles" routerLinkActive="active">Reptiles</a>
+  <a routerLink="/about" routerLinkActive="active">About</a>
+  <a routerLink="/checkout" routerLinkActive="active">Checkout ({{ cartService.items.length }})</a>
+</nav>
